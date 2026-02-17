@@ -1,0 +1,701 @@
+:root {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-top: env(safe-area-inset-top);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+html {
+  font-family: monospace;
+}
+
+button {
+  color: #00aaff;
+  background-color: #00000000;
+  border: none;
+}
+
+@font-face {
+  font-family: 'lexend';
+  src: url('fonts/lexend.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.button_cool {
+  color: lime;
+  font-family: 'lexend';
+  background-color: #000000;
+  border: 1px solid white;
+}
+
+#loginbutton {
+  background-color: aliceblue;
+  border: solid 1px black;
+  border-radius: 5px;
+  color: #000000;
+}
+
+#authscreen {
+  background-color: antiquewhite;
+  text-align: center;
+  align-content: end;
+  width: 75vw;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: solid 2px black;
+  border-radius: 10px;
+  padding: 1vh;
+}
+
+#accstatusdiv {
+  border-radius: 0.5vh;
+  background-color: #aaaaaaaa;
+  padding: 0.25vh;
+}
+
+.dot {
+  display: inline-block;
+  width: 1vh;
+  height: 1vh;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.active {
+  background: #00cc66;
+}
+
+.pending {
+  background: #999999;
+}
+
+.denied {
+  background: #ff4444;
+}
+
+#requestwarnings {
+  white-space: pre;
+}
+
+.enablewspc {
+  white-space: pre;
+}
+
+#authscreenclickblocker {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #88888899;
+  pointer-events: all;
+}
+
+.createnew {
+  color: blue;
+}
+
+#chart {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+}
+
+.header {
+  position: fixed;
+  top: 0%;
+  left: 1vw;
+  display: flex;
+  flex-direction: column;
+}
+
+#tradingpanel {
+  position: fixed;
+  top: 0%;
+  height: 6vh;
+}
+
+#order_buy {
+  white-space: pre-line;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  height: 6vh;
+  width: 25vw;
+  background-color: #3183FF;
+  border: none;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2vh;
+}
+
+#order_sell {
+  white-space: pre-line;
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  height: 6vh;
+  width: 25vw;
+  background-color: #EA4C4C;
+  border: none;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2vh;
+}
+
+#order_lot {
+  position: fixed;
+  top: 0%;
+  left: 25vw;
+  width: 50vw;
+  height: 6vh;
+  font-size: 2vh;
+  text-align: center;
+  background-color: #111111;
+  color: white;
+  color: #ffffff;
+  border: none;
+}
+
+#order_lot:hover, #order_lot:focus {
+  outline: none;
+}
+
+canvas {
+  touch-action: none;
+}
+
+.accdetaildisplay {
+  pointer-events: none;
+  touch-action: none;
+}
+
+#accountid {
+  font-size: 2vh;
+}
+
+#accountpassword {
+  font-size: 2vh;
+}
+
+#ordermenu {
+  background-color: #222222;
+  position: fixed;
+  width: 50vw;
+  color: #000000;
+  left: 50%;
+  bottom: 5vh;
+  transform: translateX(-50%);
+  border-radius: 3vh;
+  padding: 0.75vh;
+  text-align: center;
+  margin-bottom: env(safe-area-inset-bottom);
+}
+
+#ordertp {
+  border-radius: 10vh;
+  border: dashed 1px #00ff22;
+  background-color: #00000000;
+  color: #00ff22;
+}
+
+#ordersl {
+  border-radius: 10vh;
+  border: dashed 1px #ff0011;
+  background-color: #00000000;
+  color: #ff0011;
+}
+
+#orderclose {
+  border-radius: 10vh;
+  border: dashed 1px #ffaa00;
+  background-color: #00000000;
+  color: #ffaa00;
+}
+
+#ordercancel {
+  border: none;
+  background-color: #00000000;
+  color: #dddddd;
+}
+
+#ordercontinue {
+  border: none;
+  background-color: #00000000;
+  color: #00aaff;
+}
+
+#refreshbutton {
+  position: fixed;
+  right: 0.1vw;
+  bottom: 0.1vw;
+  background-color: #00000000;
+  border: none;
+}
+
+#refreshimage {
+  width: 5mm;
+}
+
+.pings {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+
+#pingimg {
+  height: 2mm;
+}
+
+#pingtime {
+  color: #ffffff;
+  font-size: 2mm;
+}
+
+#changeorderconfirmation {
+  pointer-events: all;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000000;
+  text-align: center;
+}
+
+.modifypositiontopbar {
+  text-align: left;
+  border-bottom: 2px solid #888888;
+  margin-bottom: 1vh;
+}
+
+#backbutton {
+  background-color: #00000000;
+  border: none;
+  color: #00aaff;
+  font-size: 2em;
+}
+
+#modifypositiontext {
+  font-size: 1em;
+  color: white;
+}
+
+#positiondetail {
+  font-size: 0.5em;
+  color: #888888;
+}
+
+#displaycurrentprice {
+  color: #00aaff;
+  font-family: monospace;
+  font-size: 2em;
+  margin-right: 1vw;
+}
+
+#displaycurrentask {
+  color: #00aaff;
+  font-family: monospace;
+  font-size: 2em;
+  margin-left: 1vw;
+}
+
+#tpinput {
+  background-color: #00000000;
+  border: none;
+  border-bottom: 1px solid #00ff44;
+  text-align: center;
+  color: #ffffff;
+}
+
+#tpinput:hover, #tpinput:focus {
+  outline: none;
+}
+
+#slinput {
+  background-color: #00000000;
+  border: none;
+  border-bottom: 1px solid #ff7700;
+  text-align: center;
+  color: #ffffff;
+}
+
+#slinput:hover, #slinput:focus {
+  outline: none;
+}
+
+#warningandinformation {
+  position: fixed;
+  color: white;
+  bottom: 10vh;
+  left: 0%;
+}
+
+#buttoncontinue {
+  position: fixed;
+  background-color: #00000000;
+  border: none;
+  font-size: 1em;
+  border-top: solid 2px #888888;
+  color: white;
+  width: 100vw;
+  height: 10vh;
+  bottom: 0%;
+  left: 0%;
+}
+
+.warningemblem {
+  background-color: aliceblue;
+  position: fixed;
+  width: 60vw;
+  color: #000000;
+  bottom: 20vh;
+  right: 0.5vw;
+  transform: translateX(-50%);
+  border-radius: 1vh;
+  padding: 0.5vh;
+  text-align: center;
+  font-size: 1vh;
+}
+
+.emblemfall {
+  animation: emblem_fall 0.3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.emblemback {
+  animation: emblem_back 1s;
+  animation-fill-mode: forwards;
+}
+
+#popupbox {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #474747;
+  border-radius: 1vh;
+  border: 1px solid black;
+  width: 75vw;
+  padding: 3%;
+  text-align: left;
+  box-shadow: 0 4px 10px #000000aa;
+  font-size: 1.75vh;
+}
+
+#popupexitbuttons {
+  display: flex;
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+}
+
+.textoption {
+  background-color: #00000000;
+  border: none;
+  color: #00aaff;
+}
+
+#popupcancel, #popupok {
+  background-color: #00000000;
+  border: none;
+  color: #00aaff;
+}
+
+#popuptouchblocker {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: #88888899;
+  pointer-events: all;
+}
+
+.popup {
+  animation: pop_up 0.3s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.popback {
+  animation: unpop 0.3s;
+  animation-fill-mode: forwards;
+}
+
+.coolinput {
+  color: gray;
+  background: none;
+  border: none;
+  border-bottom: solid 1px darkgray;
+}
+
+.coolinput:hover {
+  outline: none;
+}
+
+#colorpicker {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #474747;
+  border-radius: 1vh;
+  border: 1px solid black;
+  width: 75vw;
+  padding: 3%;
+  text-align: left;
+  box-shadow: 0 4px 10px #000000aa;
+}
+
+#colorpreview {
+  color: white;
+}
+
+#previewcolor {
+  width: 5vw;
+  height: 5vw;
+}
+
+#hue {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 73vw;
+  height: 2vh;
+  border-radius: 10px;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    hsl(0,100%,50%),
+    hsl(60,100%,50%),
+    hsl(120,100%,50%),
+    hsl(180,100%,50%),
+    hsl(240,100%,50%),
+    hsl(300,100%,50%),
+    hsl(360,100%,50%)
+  );
+}
+
+#lightness {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 73vw;
+  height: 2vh;
+  border-radius: 10px;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    hsl(0,100%,0%),
+    hsl(0,100%,50%),
+    hsl(360,100%,100%)
+  );
+}
+
+#saturation {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 73vw;
+  height: 2vh;
+  border-radius: 10px;
+  outline: none;
+  background: linear-gradient(
+    to right,
+    hsl(0,0%,50%),
+    hsl(0,50%,50%),
+    hsl(360,100%,50%)
+  );
+}
+
+#lightness::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0.5vh;
+  height: 2vh;
+  background: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#saturation::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0.5vh;
+  height: 2vh;
+  background: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#hue::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 0.5vh;
+  height: 2vh;
+  background: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#colorpickercontinuebutton {
+  background-color: #00000000;
+  color: #00aaff;
+  border: none;
+}
+
+#colorpickercancelbutton {
+  background-color: #00000000;
+  color: #00aaff;
+  border: none;
+}
+
+#logout {
+  background-color: #00000000;
+  color: #ff2200;
+  border: none;
+}
+
+#globalchat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #222222;
+}
+
+#globalchatheader {
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 7vh;
+  border-bottom: 1px solid #444444;
+  text-align: center;
+}
+
+#globalchattext {
+  position: fixed;
+  top: 2.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 1em;
+  font-family: monospace;
+  text-align: center;
+}
+
+#globalchatbutton{
+  position: fixed;
+  color: #00aaff;
+  background-color: #00000000;
+  border: none;
+  top: 2.5vh;
+  left: 0;
+}
+
+#messagetypebox {
+  padding: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 5vh;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  background-color: #111111;
+  border-top: 1px solid #aaaaaa;
+}
+
+#messageinput {
+  background-color: #222222;
+  border: 1px solid #888888;
+  border-radius: 1vw;
+  color: #ffffff;
+  width: 75vw;
+  height: 4vh;
+}
+
+#messageinput:hover, #messageinput:focus {
+  outline: none;
+}
+
+.messagebox {
+  color: #ffffff;
+  padding: 1vh;
+}
+
+#globalchatmessages{
+  overflow-y: auto;
+  height: calc(100vh - 140px);
+}
+
+#globalchatgotobutton {
+  position: fixed;
+  right: 7mm;
+  bottom: 0.1vw;
+  background-color: #00000000;
+  border: none;
+}
+
+#globalchatimg {
+  width: 5mm;
+}
+
+.yellow {
+  color: #ffff00;
+}
+
+.red {
+  color: #ff0000;
+}
+
+.white {
+  color: #ffffff;
+}
+
+#onlineusers {
+  color: white;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+@keyframes emblem_fall{
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes emblem_back{
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes pop_up {
+  0% {
+    opacity: 0;
+    transform: scale(0.75) translateX(-50%) translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(-50%) translateY(-50%);;
+  }
+}
+
+@keyframes unpop {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateX(-50%) translateY(-50%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.75) translateX(-50%) translateY(-50%);
+  }
+}
