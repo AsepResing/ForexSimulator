@@ -1,4 +1,39 @@
+// --- BAGIAN KONEKSI PIESOCKET (TAMBAHAN) ---
+const apiKey = "oXG6cwzmbVC2WqylOlSMX4KNAskKCW1i1F6NBiMC";
+const clusterId = "free.blr2";
+const channelId = "room_trading_1";
+const ws = new WebSocket(`wss://${clusterId}.piesocket.com/v3/${channelId}?api_key=${apiKey}`);
+
+ws.onopen = () => {
+    console.log("Terhubung ke PieSocket!");
+    document.getElementById("pingtime").innerText = "Connected";
+};
+
+ws.onmessage = (event) => {
+    const data = JSON.parse(event.data);
+    
+    // Handler data dari server sesuai fungsi asli script.js
+    if (data.type === "tick") {
+        updateprice(data.price); // Fungsi bawaan script kamu
+    } else if (data.type === "updatecandledata") {
+        updatecandledata(data); // Fungsi bawaan script kamu
+    } else if (data.type === "login_success") {
+        balance = data.balance;
+        accountid = data.accountid;
+        document.getElementById("authscreen").style.display = "none";
+        popup(`Login Berhasil! Saldo: $${balance}`, true, false);
+    }
+};
+// --- AKHIR BAGIAN KONEKSI ---
+
+// Sisanya adalah kode asli kamu...
 const chart = document.getElementById("chart");
+const ctx = chart.getContext("2d");
+
+const actx = new AudioContext();
+const buffers = {};
+
+// ... (lanjutkan dengan semua kode asli script.js kamu ke bawah)const chart = document.getElementById("chart");
 const ctx = chart.getContext("2d");
 
 const actx = new AudioContext();
