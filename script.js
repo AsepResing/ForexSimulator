@@ -2,7 +2,7 @@
 const apiKey = "oXG6cwzmbVC2WqylOlSMX4KNAskKCW1i1F6NBiMC";
 const clusterId = "free.blr2";
 const channelId = "room_trading_1";
-const ws = new WebSocket(`wss://${clusterId}.piesocket.com/v3/${channelId}?api_key=${apiKey}`);
+const ws = new WebSocket(`wss://free.blr2.piesocket.com/v3/room_trading_1?api_key=oXG6cwzmbVC2WqylOlSMX4KNAskKCW1i1F6NBiMC&notify_self=1`);
 
 ws.onopen = () => {
     console.log("Terhubung ke PieSocket!");
