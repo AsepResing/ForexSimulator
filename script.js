@@ -2425,3 +2425,22 @@ Ymargin = (screenHeight/100)*7;
 Yoffset = 0;
 popupclose();
 }
+// ===== WEBSOCKET CONNECTION =====
+
+const ws = new WebSocket("wss://793e8247-7767-46f6-a35f-61876ed91b66-00-22111p5ixg4xt.sisko.replit.dev");
+
+ws.onopen = () => {
+  console.log("Connected to Replit WebSocket server");
+};
+
+ws.onmessage = (event) => {
+  console.log("Message from server:", event.data);
+};
+
+ws.onerror = (err) => {
+  console.error("WebSocket error:", err);
+};
+
+ws.onclose = () => {
+  console.log("WebSocket closed");
+};
