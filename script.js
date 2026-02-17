@@ -431,6 +431,7 @@ let bytesOut = 0;
 let bytesIn = 0;
 let KBin = 0;
 let KBout = 0;
+
 const originalSend = WebSocket.prototype.send;
 
 WebSocket.prototype.send = function (data) {
@@ -446,15 +447,28 @@ WebSocket.prototype.send = function (data) {
   originalSend.call(this, data);
 };
 
-const ip = "192.168.0.109"; // permanent ig
-const port = 3000;
-const url = "broker.aldrichprojects.online"
+// 🔥 GANTI SERVER KE REPLIT
+const url = "94179d70-b840-483c-8d9d-fe59113b0088-00-1w2gl9uubhunp.sisko.replit.dev";
 
-// server connection watch
 function connect() {
   alertemblem("Connecting to server...");
-  //ws = new WebSocket(`ws://${ip}:${port}`);
+
   ws = new WebSocket(`wss://${url}`);
+
+  ws.onopen = () => {
+    console.log("Connected to Replit server ✅");
+    alertemblem("Connected to server!");
+  };
+
+  ws.onerror = (err) => {
+    console.error("WebSocket error:", err);
+  };
+
+  ws.onclose = () => {
+    console.log("Connection closed ❌");
+    alertemblem("Disconnected from server");
+  };
+}
 
   ws.onopen = () => {
     alertemblem("Connected to server!");
